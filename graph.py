@@ -11,7 +11,7 @@ def animate(i):
   xs = []
   ys =[]
   for line in lines:
-    is len(line)>1:
+    if len(line)>1:
       x,y= lines.split(',')
       xs.append(x)
       ys.append(y)
