@@ -2,7 +2,7 @@
 
 from time import sleep
 from Adafruit_CCS811 import Adafruit_CCS811
-
+f= open("output.txt","w")
 ccs =  Adafruit_CCS811()
 
 while not ccs.available():
@@ -14,6 +14,7 @@ while(1):
 	if ccs.available():
 	    temp = ccs.calculateTemperature()
 	    if not ccs.readData():
+	      f.write('{}\n'.format(ccs.geteCO2()))
 	      print "CO2: ", ccs.geteCO2(), "ppm, TVOC: ", ccs.getTVOC(), " temp: ", temp
 
 	    else:
