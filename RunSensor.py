@@ -11,7 +11,6 @@ csvfile1 = "tempCO2.csv"
 csvfile2 = "tempTVOC.csv"
 csvfile3 = "tempTEMP.csv"
 
-#f= open("output.txt","w")
 ccs =  Adafruit_CCS811()
 
 
@@ -31,11 +30,6 @@ while(1):
 	    
 	    if not ccs.readData():
               count =0
-              #f.write('{}'.format(time.time()))
-              #f.write('{}'.format(count))
-              #f.write(',')
-	      #f.write('{}\n'.format(ccs.geteCO2()))
-              #print "CO2: ", ccs.geteCO2(), "ppm, TVOC: ", ccs.getTVOC(), " temp: ", temp
               print "CO2: ", co2, "ppm, TVOC: ", ccs.getTVOC(), " temp: ", temp    
 
 	    else:
@@ -47,7 +41,7 @@ while(1):
         data1 = [co2, timeC]
         data2 = [ccs.getTVOC(),timeC]
         data3 = [temp,timeC]
-        
+        #writes data to files to be used by GraphData.py
         with open(csvfile1,"a") as output:
                 writer = csv.writer(output,delimiter=",", lineterminator='\n')
                 writer.writerow(data1)
