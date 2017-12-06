@@ -27,11 +27,10 @@ def animate(i):
         
         time_string = datetime.strptime(timeA,'%H:%M:%S')
         
-        try:
-            co.append(float(degree))
-            timeC.append(time_string)
-        except:
-            print "dont know"
+        
+        co.append(float(degree))
+        timeC.append(time_string)
+        
             
         ax1 = fig.add_subplot(5,1,1)
         
@@ -54,11 +53,10 @@ def animate(i):
         
         time_string = datetime.strptime(timeA,'%H:%M:%S')
        
-        try:
-            TVOC.append(float(degree))
-            timeC2.append(time_string)
-        except:
-            print "dont know"
+       
+        TVOC.append(float(degree))
+        timeC2.append(time_string)
+        
             
         ax2 = fig.add_subplot(5,1,5)
         
@@ -82,11 +80,10 @@ def animate(i):
         
         time_string = datetime.strptime(timeA,'%H:%M:%S')
        
-        try:
-            TEMP.append(float(degree))
-            timeC3.append(time_string)
-        except:
-            print "dont know"
+        
+        TEMP.append(float(degree))
+        timeC3.append(time_string)
+        
             
         ax3 = fig.add_subplot(5,1,3)
         
