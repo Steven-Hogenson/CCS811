@@ -24,9 +24,9 @@ def animate(i):
         degree = pieces[0]
         timeB=  pieces[1]
         timeA= timeB[:8]
-        #print timeA
+        
         time_string = datetime.strptime(timeA,'%H:%M:%S')
-        #print time_string
+        
         try:
             co.append(float(degree))
             timeC.append(time_string)
@@ -34,12 +34,12 @@ def animate(i):
             print "dont know"
             
         ax1 = fig.add_subplot(5,1,1)
-        #ax1=plt.subplot2grid((6,1),(0,0),rowspan=4,colspan=1)
+        
         ax1.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
-        #ax1.clear()
+        
         ax1.plot(timeC,co,'m')
         plt.title('Current CO2 Level')
-        plt.xlabel('Time')##add this back in if needed
+        plt.xlabel('Time')
         plt.ylabel('CO2 ppm')
 
     fTVOC = 'tempTVOC.csv'
@@ -51,9 +51,9 @@ def animate(i):
         degree = pieces[0]
         timeB=  pieces[1]
         timeA= timeB[:8]
-        #print timeA
+        
         time_string = datetime.strptime(timeA,'%H:%M:%S')
-        #print time_string
+       
         try:
             TVOC.append(float(degree))
             timeC2.append(time_string)
@@ -61,9 +61,9 @@ def animate(i):
             print "dont know"
             
         ax2 = fig.add_subplot(5,1,5)
-        #ax2=plt.subplot2grid((6,1),(3,0),rowspan=4,colspan=1)
+        
         ax2.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
-        #ax1.clear()
+        
         ax2.plot(timeC2,TVOC,'c')
         plt.title('Current TVOC Level')
         plt.xlabel('Time')
@@ -79,9 +79,9 @@ def animate(i):
         degree = pieces[0]
         timeB=  pieces[1]
         timeA= timeB[:8]
-        #print timeA
+        
         time_string = datetime.strptime(timeA,'%H:%M:%S')
-        #print time_string
+       
         try:
             TEMP.append(float(degree))
             timeC3.append(time_string)
@@ -89,9 +89,7 @@ def animate(i):
             print "dont know"
             
         ax3 = fig.add_subplot(5,1,3)
-        #ax2=plt.subplot2grid((6,1),(3,0),rowspan=4,colspan=1)
-        #---ax3.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
-        #ax1.clear()
+        
         ax3.plot(timeC3,TEMP,'g')
         plt.title('Current Temperature')
         plt.xlabel('Time')
