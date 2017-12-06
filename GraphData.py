@@ -1,3 +1,4 @@
+#Libraries used to create the plots and read in data.
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.animation as animation
@@ -14,6 +15,7 @@ f2.write('')#clears file before writing to it
 f3= open("tempTEMP.csv","w")
 f3.write('')#clears file before writing to it
 
+#Method that just opens up files where data is being fed into, and graphs them dynamically.
 def animate(i):
     fco = 'tempCO2.csv'
     fh = open(fco)
@@ -91,6 +93,7 @@ def animate(i):
         plt.title('Current Temperature')
         plt.xlabel('Time')
         plt.ylabel('Temperature (C)')
+#Define ani and use it to graph plots.
 ani = animation.FuncAnimation(fig, animate, interval = 2000)
 plt.show()
 plt.clf()
